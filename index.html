@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AutoProfit Radom</title>
+
+<meta name="description" content="AutoProfit Barbara Jelonkiewicz – agencja ubezpieczeniowa w Radomiu od 2000 roku. Ubezpieczenia komunikacyjne, majątkowe i osobowe.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: full-width navy hero built around the years-on-the-market figure and a year-by-year bar; light content sections; navy contact band */
+:root{
+  --navy:#0b1d36;
+  --navy-2:#13294a;
+  --on-navy:#eef2f8;
+  --on-navy-muted:#a9b6ca;
+  --bg:#f4f6f9;
+  --surface:#ffffff;
+  --fg:#0e1a2c;
+  --muted:#56657b;
+  --line:#dde3ec;
+  --gold:#c99a3b;
+  --gold-soft:#f3e7cc;
+  --gold-ink:#231803;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"Public Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --wrap:1140px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --navy:#08142a;--navy-2:#0f2140;--bg:#0b1322;--surface:#121c2f;--fg:#e8edf5;--muted:#9babc1;--line:#223049;--gold:#ddb35a;--gold-soft:#2c2414;--gold-ink:#1d1403;color-scheme:dark}}
+:root[data-theme="dark"]{--navy:#08142a;--navy-2:#0f2140;--bg:#0b1322;--surface:#121c2f;--fg:#e8edf5;--muted:#9babc1;--line:#223049;--gold:#ddb35a;--gold-soft:#2c2414;--gold-ink:#1d1403;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--navy)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.04;text-wrap:balance;font-stretch:112%;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.eyebrow{font-family:var(--display);font-stretch:118%;font-weight:600;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-stretch:108%;font-weight:600;font-size:1rem;padding:14px 22px;border-radius:999px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn svg{width:18px;height:18px}
+.btn-gold{background:var(--gold);color:var(--gold-ink)}
+.btn-ghost{border-color:rgba(238,242,248,.35);color:var(--on-navy)}
+.btn-ghost:hover{background:rgba(238,242,248,.08)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--navy);color:var(--on-navy);border-bottom:1px solid rgba(255,255,255,.08)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.mark{width:38px;height:38px;border-radius:10px;background:var(--gold);color:var(--gold-ink);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-stretch:100%;font-size:1.05rem}
+.logo-text{display:grid;line-height:1.1}
+.logo-text b{font-family:var(--display);font-stretch:115%;font-weight:700;font-size:1.2rem;letter-spacing:.01em}
+.logo-text span{font-size:.75rem;color:var(--on-navy-muted)}
+nav{display:flex;align-items:center;gap:6px}
+nav a{text-decoration:none;font-weight:500;font-size:.95rem;padding:8px 12px;border-radius:999px;color:var(--on-navy-muted)}
+nav a:hover{color:var(--on-navy);background:rgba(255,255,255,.06)}
+nav a.btn-gold{color:var(--gold-ink);padding:9px 16px;font-family:var(--display);font-weight:600}
+nav a.btn-gold:hover{background:var(--gold);filter:brightness(1.06)}
+@media (max-width:760px){nav a.lnk{display:none}.logo-text span{display:none}}
+
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 85% 0%,var(--navy-2),var(--navy) 70%);color:var(--on-navy);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;padding-block:72px 64px}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.4rem);font-weight:750;margin-top:18px}
+.hero h1 .g{color:var(--gold)}
+.hero .lead{margin-top:22px;font-size:1.15rem;color:var(--on-navy-muted);max-width:33em}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+.years{position:relative;border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:32px;background:rgba(255,255,255,.03);min-width:0}
+.years-num{font-family:var(--display);font-weight:800;font-stretch:125%;font-size:clamp(6rem,15vw,10rem);line-height:.85;color:var(--gold);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.years-cap{font-family:var(--display);font-stretch:112%;font-weight:600;font-size:1.35rem;margin-top:10px}
+.years-sub{color:var(--on-navy-muted);font-size:.95rem;margin-top:4px}
+.ticks{display:grid;gap:3px;margin-top:28px;height:46px;align-items:end}
+.tick{background:var(--gold);border-radius:2px;height:100%;opacity:.9}
+.tick:nth-child(5n+1){height:100%}
+.tick:not(:nth-child(5n+1)){height:62%;opacity:.55}
+.tick:last-child{opacity:1;height:100%;box-shadow:0 0 0 2px rgba(201,154,59,.35)}
+.tick-axis{display:flex;justify-content:space-between;margin-top:8px;font-size:.8rem;color:var(--on-navy-muted);font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:no-preference){
+  .tick{animation:rise .6s ease both;animation-delay:calc(var(--i) * 28ms)}
+  @keyframes rise{from{transform:scaleY(.3);transform-origin:bottom}to{transform:scaleY(1);transform-origin:bottom}}
+}
+
+/* trust strip */
+.strip{background:var(--surface);border-bottom:1px solid var(--line)}
+.strip-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.stat{padding:26px 20px;display:grid;gap:4px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat b{font-family:var(--display);font-stretch:115%;font-weight:700;font-size:1.7rem;line-height:1.1}
+.stat span{color:var(--muted);font-size:.93rem;line-height:1.4}
+@media (max-width:820px){.strip-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stat{border-left:0;padding-left:0;border-top:1px solid var(--line)}.stat:nth-child(-n+2){border-top:0}}
+
+/* sections */
+section{padding-block:88px}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:44px}
+.head h2{font-size:clamp(2rem,4.2vw,3.1rem);font-weight:720;margin-top:12px}
+.head p{color:var(--muted);max-width:52ch}
+@media (max-width:820px){.head{grid-template-columns:1fr;gap:16px}section{padding-block:64px}}
+
+/* offer */
+.offer{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:14px;min-width:0;transition:border-color .2s ease,transform .2s ease}
+.card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.card-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.ico{width:56px;height:56px;border-radius:16px;background:var(--gold-soft);display:grid;place-items:center}
+.ico svg{width:30px;height:30px;stroke:var(--gold);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.kind{font-size:.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+.card h3{font-size:1.6rem;font-weight:700}
+.card p{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:.82rem;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
+.card a.more{margin-top:auto;padding-top:8px;font-family:var(--display);font-stretch:108%;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;color:var(--fg)}
+.card a.more::after{content:"→";color:var(--gold);transition:transform .15s ease}
+.card a.more:hover::after{transform:translateX(4px)}
+@media (max-width:820px){.offer{grid-template-columns:1fr}.card{padding:24px}}
+
+/* experience */
+.exp{background:var(--surface);border-block:1px solid var(--line)}
+.exp-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.exp-quote{position:sticky;top:110px}
+.exp-quote h2{font-size:clamp(2.2rem,4.6vw,3.4rem);font-weight:740;margin-top:12px}
+.exp-quote h2 .g{color:var(--gold)}
+.exp-quote p{margin-top:20px;color:var(--muted);max-width:44ch}
+.reasons{display:grid;gap:0}
+.reason{display:grid;grid-template-columns:auto 1fr;gap:20px;padding-block:28px;border-top:1px solid var(--line)}
+.reason:first-child{border-top:0;padding-top:0}
+.reason .n{font-family:var(--display);font-stretch:120%;font-weight:700;font-size:.95rem;color:var(--gold);padding-top:4px;font-variant-numeric:tabular-nums}
+.reason h3{font-size:1.35rem;font-weight:680}
+.reason p{color:var(--muted);margin-top:6px;max-width:58ch}
+@media (max-width:820px){.exp-grid{grid-template-columns:1fr;gap:36px}.exp-quote{position:static}}
+
+/* OC reminder */
+.oc{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;background:var(--navy);color:var(--on-navy);border-radius:24px;padding:44px}
+.oc h2{font-size:clamp(1.8rem,3.6vw,2.5rem);font-weight:720;margin-top:10px}
+.oc p.d{color:var(--on-navy-muted);margin-top:14px;max-width:46ch}
+.oc-box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:24px;display:grid;gap:10px;min-width:0}
+.oc-box label{font-weight:600;font-size:.95rem}
+.oc-box input{font:inherit;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:var(--on-navy);color-scheme:dark;max-width:100%}
+.oc-days{font-family:var(--display);font-stretch:118%;font-weight:800;font-size:3.2rem;line-height:1;color:var(--gold);font-variant-numeric:tabular-nums;margin-top:6px}
+.oc-msg{color:var(--on-navy-muted);font-size:.98rem}
+.oc-days.late{color:#ff9b72}
+@media (max-width:820px){.oc{grid-template-columns:1fr;padding:28px 22px;gap:24px}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;counter-reset:s}
+.step{border-top:2px solid var(--fg);padding-top:20px;display:grid;gap:8px}
+.step b{font-family:var(--display);font-stretch:120%;font-weight:700;color:var(--gold);font-size:.9rem;letter-spacing:.1em}
+.step h3{font-size:1.3rem;font-weight:680}
+.step p{color:var(--muted)}
+@media (max-width:820px){.steps{grid-template-columns:1fr}}
+
+/* contact */
+.contact{background:var(--navy);color:var(--on-navy)}
+.contact .head p{color:var(--on-navy-muted)}
+.c-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px}
+.info{display:grid;gap:26px;align-content:start}
+.info .k{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-navy-muted);font-weight:600}
+.info .v{font-size:1.15rem;margin-top:4px}
+.info .phone{font-family:var(--display);font-stretch:118%;font-weight:750;font-size:clamp(2rem,4.5vw,2.8rem);line-height:1.1;letter-spacing:.01em}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 24px;font-variant-numeric:tabular-nums;margin-top:6px}
+.copy{font:inherit;font-size:.8rem;font-weight:600;background:transparent;border:1px solid rgba(255,255,255,.3);color:var(--on-navy);border-radius:999px;padding:3px 10px;cursor:pointer;margin-left:10px;vertical-align:middle}
+.info .cta{display:flex;flex-wrap:wrap;gap:12px}
+form.msg{background:var(--surface);color:var(--fg);border-radius:22px;padding:32px;display:grid;gap:16px;min-width:0}
+form.msg h3{font-size:1.6rem;font-weight:700}
+.f{display:grid;gap:6px}
+.f label{font-weight:600;font-size:.92rem}
+.f input,.f select,.f textarea{font:inherit;width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg)}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--gold);outline:none;box-shadow:0 0 0 3px var(--gold-soft)}
+.f textarea{min-height:120px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.status{font-weight:600;font-size:.95rem;color:var(--muted)}
+@media (max-width:820px){.c-grid{grid-template-columns:1fr}form.msg{padding:22px}}
+@media (max-width:480px){.two{grid-template-columns:1fr}.years{padding:22px}.hero-grid{padding-block:44px}}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+
+footer{background:var(--navy);color:var(--on-navy-muted);font-size:.9rem;border-top:1px solid rgba(255,255,255,.08)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-block:24px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="AutoProfit – strona główna">
+      <span class="mark">AP</span>
+      <span class="logo-text"><b>AutoProfit</b><span>Barbara Jelonkiewicz · Radom</span></span>
+    </a>
+    <nav aria-label="Menu">
+      <a class="lnk" href="#oferta">Oferta</a>
+      <a class="lnk" href="#doswiadczenie">Doświadczenie</a>
+      <a class="lnk" href="#kontakt">Kontakt</a>
+      <a class="btn-gold" href="tel:+48483631257">48 363 12 57</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Agencja ubezpieczeniowa w Radomiu</p>
+        <h1><span class="js-years">26</span> lat doświadczenia. <span class="g">Ubezpieczenia, którym można zaufać.</span></h1>
+        <p class="lead">Od 2000 roku pomagamy kierowcom, rodzinom i firmom wybrać najlepszą ochronę. Porównujemy oferty wielu towarzystw i doradzamy z wiedzą, którą daje ćwierć wieku pracy na rynku.</p>
+        <div class="cta">
+          <a class="btn btn-gold" href="#kontakt">Bezpłatna wycena
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="#oferta">Poznaj ofertę</a>
+        </div>
+      </div>
+      <div class="years" aria-label="Na rynku od 2000 roku">
+        <div class="years-num js-years">26</div>
+        <p class="years-cap">lat na rynku ubezpieczeń</p>
+        <p class="years-sub">Każda kreska to jeden rok naszej pracy dla klientów.</p>
+        <div class="ticks" id="ticks" aria-hidden="true"></div>
+        <div class="tick-axis"><span>2000</span><span>2010</span><span class="js-year">2026</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="wrap strip-grid">
+      <div class="stat"><b>od 2000 r.</b><span>nieprzerwanie na rynku ubezpieczeń</span></div>
+      <div class="stat"><b>Radom</b><span>stałe biuro przy ul. 25 Czerwca 60</span></div>
+      <div class="stat"><b>Wiele towarzystw</b><span>porównanie ofert w jednym miejscu</span></div>
+      <div class="stat"><b>Jeden doradca</b><span>od wyceny po pomoc przy szkodzie</span></div>
+    </div>
+  </div>
+
+  <section id="oferta">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow">Oferta</p>
+          <h2>Kompleksowa ochrona dla Ciebie, Twojej rodziny i firmy</h2>
+        </div>
+        <p>Dobieramy zakres polisy do konkretnych potrzeb, a nie odwrotnie. Dzięki wieloletniej współpracy z towarzystwami wiemy, gdzie szukać najkorzystniejszych warunków.</p>
+      </div>
+      <div class="offer">
+        <article class="card">
+          <div class="card-top"><div class="ico"><svg viewBox="0 0 32 32"><path d="M5 20v-4l3-6h16l3 6v4"/><path d="M4 20h24v4H4z"/><circle cx="9.5" cy="24" r="2.5"/><circle cx="22.5" cy="24" r="2.5"/><path d="M8 16h16"/></svg></div><span class="kind">Komunikacyjne</span></div>
+          <h3>Samochody osobowe</h3>
+          <p>Obowiązkowe OC chroni Cię przed kosztami szkód osobowych i rzeczowych wyrządzonych innym uczestnikom ruchu. Uzupełnimy je o AC, NNW i assistance, aby ochrona była pełna.</p>
+          <div class="chips"><span>OC</span><span>AC</span><span>NNW</span><span>Assistance</span><span>Szyby</span></div>
+          <a class="more" href="#kontakt" data-topic="Samochód osobowy (OC/AC)">Zapytaj o wycenę</a>
+        </article>
+        <article class="card">
+          <div class="card-top"><div class="ico"><svg viewBox="0 0 32 32"><path d="M3 8h15v14H3z"/><path d="M18 13h6l5 5v4H18z"/><circle cx="8" cy="24" r="2.5"/><circle cx="23" cy="24" r="2.5"/></svg></div><span class="kind">Dla firm</span></div>
+          <h3>Pojazdy dostawcze i ciężarowe</h3>
+          <p>Ubezpieczamy pojazdy firmowe i floty. Firmom spedycyjnym i logistycznym oferujemy OC spedytora, które chroni przy organizacji wysyłki i odbioru powierzonego mienia.</p>
+          <div class="chips"><span>OC i AC floty</span><span>OC spedytora</span><span>OC przewoźnika</span></div>
+          <a class="more" href="#kontakt" data-topic="Pojazd dostawczy lub ciężarowy">Zapytaj o wycenę</a>
+        </article>
+        <article class="card">
+          <div class="card-top"><div class="ico"><svg viewBox="0 0 32 32"><path d="M4 15 16 5l12 10"/><path d="M7 13v14h18V13"/><path d="M13 27v-8h6v8"/></svg></div><span class="kind">Majątkowe</span></div>
+          <h3>Domy i mieszkania</h3>
+          <p>Ochrona murów, stałych elementów, ruchomości domowych i mienia podręcznego. Także oszklenie: szyby, lustra, witraże, szklane blaty i ceramiczne płyty grzewcze.</p>
+          <div class="chips"><span>Mury</span><span>Ruchomości</span><span>Oszklenie</span><span>OC w życiu prywatnym</span></div>
+          <a class="more" href="#kontakt" data-topic="Dom lub mieszkanie">Zapytaj o wycenę</a>
+        </article>
+        <article class="card">
+          <div class="card-top"><div class="ico"><svg viewBox="0 0 32 32"><circle cx="11" cy="10" r="4"/><circle cx="22" cy="12" r="3"/><path d="M3 26c0-5 3.5-8 8-8s8 3 8 8"/><path d="M19 20c1-1 2-1.5 3-1.5 3.5 0 6 2.5 6 6.5"/></svg></div><span class="kind">Osobowe</span></div>
+          <h3>Ubezpieczenia osobowe</h3>
+          <p>Pakiety dla osób, które cenią bezpieczeństwo swoje i najbliższych. Chronią przed skutkami nieszczęśliwych zdarzeń w codziennym życiu, przez 24 godziny na dobę.</p>
+          <div class="chips"><span>NNW</span><span>Na życie</span><span>Podróże</span><span>Ochrona 24h</span></div>
+          <a class="more" href="#kontakt" data-topic="Ubezpieczenie osobowe">Zapytaj o wycenę</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="doswiadczenie" class="exp">
+    <div class="wrap exp-grid">
+      <div class="exp-quote">
+        <p class="eyebrow">Doświadczenie</p>
+        <h2>Ponad ćwierć wieku <span class="g">przy jednym adresie</span> i jednym celu: dobrze chronić klientów.</h2>
+        <p>Firma AutoProfit działa na rynku ubezpieczeń od 2000 roku. Przez ten czas przepisy, produkty i towarzystwa wielokrotnie się zmieniały. Nasza rola pozostała ta sama: rzetelna porada i oferta dopasowana do człowieka.</p>
+      </div>
+      <div class="reasons">
+        <div class="reason"><span class="n">01</span><div><h3>Znamy rynek od podszewki</h3><p>Wiemy, czym naprawdę różnią się polisy poszczególnych towarzystw: wyłączenia, sumy ubezpieczenia, zasady wypłaty odszkodowań. Na tym nie da się nauczyć w kilka miesięcy.</p></div></div>
+        <div class="reason"><span class="n">02</span><div><h3>Wsparcie, gdy dochodzi do szkody</h3><p>Ubezpieczenie sprawdza się dopiero wtedy, gdy coś się stanie. Podpowiadamy, jak zgłosić szkodę i jakie dokumenty przygotować, żeby sprawa przebiegła sprawnie.</p></div></div>
+        <div class="reason"><span class="n">03</span><div><h3>Stała, osobista opieka</h3><p>Zamiast infolinii masz doradcę, który zna Twoją historię. Pilnujemy terminów odnowień i przeglądamy polisy, gdy zmienia się Twoja sytuacja.</p></div></div>
+        <div class="reason"><span class="n">04</span><div><h3>Wiele ofert w jednym miejscu</h3><p>Współpracujemy z wieloma towarzystwami ubezpieczeniowymi, więc porównanie składek i zakresów zajmuje jedną wizytę lub jeden telefon.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-bottom:0">
+    <div class="wrap">
+      <div class="oc" id="oc">
+        <div>
+          <p class="eyebrow">Przypomnienie o OC</p>
+          <h2>Sprawdź, ile zostało do końca Twojej polisy</h2>
+          <p class="d">OC jest obowiązkowe dla każdego zarejestrowanego pojazdu. Najlepszy moment na porównanie ofert to około miesiąca przed końcem ochrony.</p>
+        </div>
+        <div class="oc-box">
+          <label for="oc-date">Data końca obecnej polisy</label>
+          <input type="date" id="oc-date">
+          <div class="oc-days" id="oc-days" aria-live="polite">–</div>
+          <p class="oc-msg" id="oc-msg"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow">Jak pracujemy</p>
+          <h2>Polisa w trzech prostych krokach</h2>
+        </div>
+        <p>Większość spraw załatwiamy podczas jednej wizyty w biurze lub rozmowy telefonicznej.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><b>KROK 1</b><h3>Kontakt</h3><p>Zadzwoń lub przyjdź z dowodem rejestracyjnym albo obecną polisą.</p></div>
+        <div class="step"><b>KROK 2</b><h3>Porównanie</h3><p>Zestawiamy oferty kilku towarzystw i omawiamy różnice w zakresie ochrony.</p></div>
+        <div class="step"><b>KROK 3</b><h3>Ochrona</h3><p>Wybierasz polisę, a my przypominamy o jej odnowieniu w kolejnych latach.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="contact">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow">Kontakt</p>
+          <h2>Zapraszamy do biura w Radomiu</h2>
+        </div>
+        <p>Wycena jest bezpłatna i niezobowiązująca. Zadzwoń, napisz lub odwiedź nas w godzinach pracy biura.</p>
+      </div>
+      <div class="c-grid">
+        <div class="info">
+          <div><div class="k">Telefon</div><div class="phone">48 363 12 57<button class="copy" type="button" data-copy="48 363 12 57">Kopiuj</button></div></div>
+          <div><div class="k">Adres biura</div><div class="v">AutoProfit Barbara Jelonkiewicz<br>ul. 25 Czerwca 60, 26-600 Radom</div></div>
+          <div><div class="k">E-mail</div><div class="v">info@autoprofit.org<button class="copy" type="button" data-copy="info@autoprofit.org">Kopiuj</button></div></div>
+          <div><div class="k">Godziny otwarcia</div><div class="v hours"><span>pon.–pt.</span><span>8:00–17:00</span><span>sob.–niedz.</span><span>nieczynne</span></div></div>
+          <div class="cta">
+            <a class="btn btn-gold" href="tel:+48483631257">Zadzwoń teraz</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=ul.+25+Czerwca+60,+26-600+Radom" target="_blank" rel="noopener">Wyznacz trasę</a>
+          </div>
+        </div>
+        <form class="msg" id="msg" novalidate>
+          <h3>Zamów bezpłatną wycenę</h3>
+          <div class="two">
+            <div class="f"><label for="f-name">Imię i nazwisko</label><input id="f-name" autocomplete="name"></div>
+            <div class="f"><label for="f-phone">Telefon</label><input id="f-phone" type="tel" autocomplete="tel"></div>
+          </div>
+          <div class="f"><label for="f-mail">E-mail</label><input id="f-mail" type="email" autocomplete="email"></div>
+          <div class="f"><label for="f-topic">Rodzaj ubezpieczenia</label>
+            <select id="f-topic">
+              <option>Samochód osobowy (OC/AC)</option>
+              <option>Pojazd dostawczy lub ciężarowy</option>
+              <option>Dom lub mieszkanie</option>
+              <option>Ubezpieczenie osobowe</option>
+              <option>Inne</option>
+            </select>
+          </div>
+          <div class="f"><label for="f-text">Wiadomość</label><textarea id="f-text" placeholder="Np. marka i rocznik auta, data końca obecnej polisy"></textarea></div>
+          <button class="btn btn-dark" type="submit">Wyślij zapytanie</button>
+          <p class="status" id="f-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span class="js-year">2026</span> AutoProfit Barbara Jelonkiewicz · Radom</span>
+    <span>Na rynku ubezpieczeń od 2000 roku</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var now=new Date(), Y=now.getFullYear(), yrs=Y-2000;
+  document.querySelectorAll('.js-years').forEach(function(e){e.textContent=yrs});
+  document.querySelectorAll('.js-year').forEach(function(e){e.textContent=Y});
+
+  var t=document.getElementById('ticks');
+  t.style.gridTemplateColumns='repeat('+(yrs+1)+',1fr)';
+  for(var i=0;i<=yrs;i++){var s=document.createElement('span');s.className='tick';s.style.setProperty('--i',i);s.title=String(2000+i);t.appendChild(s);}
+
+  // OC countdown
+  var d=document.getElementById('oc-date'),dn=document.getElementById('oc-days'),m=document.getElementById('oc-msg');
+  function upd(){
+    dn.classList.remove('late');
+    if(!d.value){dn.textContent='–';m.textContent='Wybierz datę.';return;}
+    var a=new Date();a.setHours(0,0,0,0);
+    var n=Math.round((new Date(d.value+'T00:00:00')-a)/864e5);
+    if(n<0){dn.textContent='po terminie';dn.classList.add('late');m.textContent='Polisa wygasła '+(-n)+' dni temu. Jazda bez OC grozi karą. Zadzwoń: 48 363 12 57.';}
+    else if(n===0){dn.textContent='dziś';dn.classList.add('late');m.textContent='Polisa kończy się dzisiaj. Zadzwoń: 48 363 12 57.';}
+    else{dn.textContent=n+(n===1?' dzień':' dni');m.textContent=n<=30?'To dobry moment, żeby porównać oferty. Zadzwoń lub wyślij zapytanie.':'Odezwij się do nas około miesiąca przed końcem polisy.';}
+  }
+  var ex=new Date();ex.setDate(ex.getDate()+24);
+  var p=function(x){return String(x).padStart(2,'0')};
+  d.value=ex.getFullYear()+'-'+p(ex.getMonth()+1)+'-'+p(ex.getDate());
+  d.addEventListener('input',upd);upd();
+
+  // prefill topic from offer cards
+  var topic=document.getElementById('f-topic');
+  document.querySelectorAll('[data-topic]').forEach(function(a){
+    a.addEventListener('click',function(){topic.value=a.getAttribute('data-topic');});
+  });
+
+  // copy buttons
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var done=function(){b.textContent='Skopiowano';setTimeout(function(){b.textContent='Kopiuj'},1600)};
+      try{navigator.clipboard.writeText(b.getAttribute('data-copy')).then(done,function(){})}catch(e){}
+    });
+  });
+
+  // form: on the live site connect to a mail backend
+  var f=document.getElementById('msg'),st=document.getElementById('f-status');
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var n=document.getElementById('f-name'),e=document.getElementById('f-mail'),ph=document.getElementById('f-phone');
+    if(!n.value.trim()){st.textContent='Podaj imię i nazwisko.';n.focus();return;}
+    if(!e.value.trim()&&!ph.value.trim()){st.textContent='Podaj e-mail lub telefon, żebyśmy mogli odpowiedzieć.';e.focus();return;}
+    if(e.value.trim()&&!e.checkValidity()){st.textContent='Sprawdź adres e-mail.';e.focus();return;}
+    st.textContent='To podgląd strony. Formularz zacznie wysyłać wiadomości po podłączeniu do serwera. Do tego czasu zapraszamy do kontaktu telefonicznego: 48 363 12 57.';
+  });
+})();
+</script>
+</body>
+</html>

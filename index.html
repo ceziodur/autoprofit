@@ -188,6 +188,16 @@ form.msg h3{font-size:1.6rem;font-weight:700}
 
 footer{background:var(--navy);color:var(--on-navy-muted);font-size:.9rem;border-top:1px solid rgba(255,255,255,.08)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-block:24px}
+/* map */
+.map{background:var(--bg);padding-block:72px}
+.map-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px 32px;margin-bottom:28px}
+.map-head h2{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:720;margin-top:10px}
+.map-head p{color:var(--muted);margin-top:6px}
+.map-frame{position:relative;width:100%;aspect-ratio:16/7;min-height:320px;max-width:100%;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.map-frame .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted)}
+.map-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.btn-line{border-color:var(--line);color:var(--fg);background:var(--surface)}
+@media (max-width:640px){.map-frame{aspect-ratio:4/5}.map{padding-block:56px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
@@ -203,7 +213,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
       <a class="lnk" href="#oferta">Oferta</a>
       <a class="lnk" href="#doswiadczenie">Doświadczenie</a>
       <a class="lnk" href="#kontakt">Kontakt</a>
-      <a class="btn-gold" href="tel:+48483631257">48 363 12 57</a>
+      <a class="btn-gold" href="tel:+48794909022">+48 794 909 022</a>
     </nav>
   </div>
 </header>
@@ -344,12 +354,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
       </div>
       <div class="c-grid">
         <div class="info">
-          <div><div class="k">Telefon</div><div class="phone">48 363 12 57<button class="copy" type="button" data-copy="48 363 12 57">Kopiuj</button></div></div>
+          <div><div class="k">Telefon</div><div class="phone">+48 794 909 022<button class="copy" type="button" data-copy="+48 794 909 022">Kopiuj</button></div></div>
           <div><div class="k">Adres biura</div><div class="v">AutoProfit Barbara Jelonkiewicz<br>ul. 25 Czerwca 60, 26-600 Radom</div></div>
           <div><div class="k">E-mail</div><div class="v">info@autoprofit.org<button class="copy" type="button" data-copy="info@autoprofit.org">Kopiuj</button></div></div>
           <div><div class="k">Godziny otwarcia</div><div class="v hours"><span>pon.–pt.</span><span>8:00–17:00</span><span>sob.–niedz.</span><span>nieczynne</span></div></div>
           <div class="cta">
-            <a class="btn btn-gold" href="tel:+48483631257">Zadzwoń teraz</a>
+            <a class="btn btn-gold" href="tel:+48794909022">Zadzwoń teraz</a>
             <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=ul.+25+Czerwca+60,+26-600+Radom" target="_blank" rel="noopener">Wyznacz trasę</a>
           </div>
         </div>
@@ -373,6 +383,22 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
           <button class="btn btn-dark" type="submit">Wyślij zapytanie</button>
           <p class="status" id="f-status" aria-live="polite"></p>
         </form>
+      </div>
+    </div>
+  </section>
+  <section class="map" id="mapa" aria-labelledby="mapa-h">
+    <div class="wrap">
+      <div class="map-head">
+        <div>
+          <p class="eyebrow">Dojazd</p>
+          <h2 id="mapa-h">Jak do nas trafić</h2>
+          <p>ul. 25 Czerwca 60, 26-600 Radom · pon.–pt. 8:00–17:00</p>
+        </div>
+        <a class="btn btn-line" href="https://www.google.com/maps/dir/?api=1&amp;destination=ul.+25+Czerwca+60,+26-600+Radom" target="_blank" rel="noopener">Wyznacz trasę w Google Maps</a>
+      </div>
+      <div class="map-frame">
+        <div class="ph">Mapa Google: ul. 25 Czerwca 60, 26-600 Radom</div>
+        <iframe title="Mapa Google – AutoProfit, ul. 25 Czerwca 60, Radom" src="https://www.google.com/maps?q=ul.+25+Czerwca+60,+26-600+Radom&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -402,8 +428,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
     if(!d.value){dn.textContent='–';m.textContent='Wybierz datę.';return;}
     var a=new Date();a.setHours(0,0,0,0);
     var n=Math.round((new Date(d.value+'T00:00:00')-a)/864e5);
-    if(n<0){dn.textContent='po terminie';dn.classList.add('late');m.textContent='Polisa wygasła '+(-n)+' dni temu. Jazda bez OC grozi karą. Zadzwoń: 48 363 12 57.';}
-    else if(n===0){dn.textContent='dziś';dn.classList.add('late');m.textContent='Polisa kończy się dzisiaj. Zadzwoń: 48 363 12 57.';}
+    if(n<0){dn.textContent='po terminie';dn.classList.add('late');m.textContent='Polisa wygasła '+(-n)+' dni temu. Jazda bez OC grozi karą. Zadzwoń: +48 794 909 022.';}
+    else if(n===0){dn.textContent='dziś';dn.classList.add('late');m.textContent='Polisa kończy się dzisiaj. Zadzwoń: +48 794 909 022.';}
     else{dn.textContent=n+(n===1?' dzień':' dni');m.textContent=n<=30?'To dobry moment, żeby porównać oferty. Zadzwoń lub wyślij zapytanie.':'Odezwij się do nas około miesiąca przed końcem polisy.';}
   }
   var ex=new Date();ex.setDate(ex.getDate()+24);
@@ -433,7 +459,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
     if(!n.value.trim()){st.textContent='Podaj imię i nazwisko.';n.focus();return;}
     if(!e.value.trim()&&!ph.value.trim()){st.textContent='Podaj e-mail lub telefon, żebyśmy mogli odpowiedzieć.';e.focus();return;}
     if(e.value.trim()&&!e.checkValidity()){st.textContent='Sprawdź adres e-mail.';e.focus();return;}
-    st.textContent='To podgląd strony. Formularz zacznie wysyłać wiadomości po podłączeniu do serwera. Do tego czasu zapraszamy do kontaktu telefonicznego: 48 363 12 57.';
+    st.textContent='To podgląd strony. Formularz zacznie wysyłać wiadomości po podłączeniu do serwera. Do tego czasu zapraszamy do kontaktu telefonicznego: +48 794 909 022.';
   });
 })();
 </script>

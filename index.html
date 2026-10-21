@@ -99,8 +99,16 @@ nav a.btn-gold:hover{background:var(--gold);filter:brightness(1.06)}
 .strip-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
 .stat{padding:26px 20px;display:grid;gap:4px;border-left:1px solid var(--line)}
 .stat:first-child{border-left:0;padding-left:0}
-.stat b{font-family:var(--display);font-stretch:115%;font-weight:700;font-size:1.7rem;line-height:1.1}
-.stat span{color:var(--muted);font-size:.93rem;line-height:1.4}
+.stat b{font-family:var(--display);font-stretch:112%;font-weight:700;font-size:1.25rem;line-height:1.15}
+.stat b .js-years{color:inherit}
+.stat>span{color:var(--muted);font-size:.93rem;line-height:1.4}
+a.stat-cta{text-decoration:none;color:inherit;background:var(--gold-soft);transition:background .15s ease}
+a.stat-cta:hover{background:var(--gold);color:var(--gold-ink)}
+a.stat-cta:hover>span{color:var(--gold-ink)}
+a.stat-cta b i{font-style:normal;display:inline-block;color:var(--gold);transition:transform .15s ease}
+a.stat-cta:hover b i{color:inherit}
+@media (max-width:820px){a.stat-cta{padding-left:16px;padding-right:16px;border-radius:12px;margin-block:10px}}
+a.stat-cta:hover b i{transform:translateX(4px)}
 @media (max-width:820px){.strip-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stat{border-left:0;padding-left:0;border-top:1px solid var(--line)}.stat:nth-child(-n+2){border-top:0}}
 
 /* sections */
@@ -186,6 +194,10 @@ form.msg h3{font-size:1.6rem;font-weight:700}
 @media (max-width:480px){.two{grid-template-columns:1fr}.years{padding:22px}.hero-grid{padding-block:44px}}
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}}
 
+/* mobile call button */
+.fab{position:fixed;z-index:8;right:max(16px,calc(env(safe-area-inset-right,0px) + 16px));bottom:calc(env(safe-area-inset-bottom,0px) + 16px);display:none;align-items:center;gap:10px;background:var(--gold);color:var(--gold-ink);font-family:var(--display);font-stretch:108%;font-weight:700;font-size:1rem;padding:14px 20px;border-radius:999px;text-decoration:none;box-shadow:0 8px 24px rgba(11,29,54,.28)}
+.fab svg{width:20px;height:20px}
+@media (max-width:760px){.fab{display:inline-flex}footer .wrap{padding-bottom:88px}}
 footer{background:var(--navy);color:var(--on-navy-muted);font-size:.9rem;border-top:1px solid rgba(255,255,255,.08)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-block:24px}
 /* map */
@@ -223,7 +235,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
     <div class="wrap hero-grid">
       <div>
         <p class="eyebrow">Agencja ubezpieczeniowa w Radomiu</p>
-        <h1><span class="js-years">26</span> lat doświadczenia. <span class="g">Ubezpieczenia, którym można zaufać.</span></h1>
+        <h1><span class="js-years">26</span> lat doświadczenia. <span class="g">Zaufanie budowane przez lata.</span></h1>
         <p class="lead">Od 2000 roku pomagamy kierowcom, rodzinom i firmom wybrać najlepszą ochronę. Porównujemy oferty wielu towarzystw i doradzamy z wiedzą, którą daje ćwierć wieku pracy na rynku.</p>
         <div class="cta">
           <a class="btn btn-gold" href="#kontakt">Bezpłatna wycena
@@ -243,10 +255,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
 
   <div class="strip">
     <div class="wrap strip-grid">
-      <div class="stat"><b>od 2000 r.</b><span>nieprzerwanie na rynku ubezpieczeń</span></div>
-      <div class="stat"><b>Radom</b><span>stałe biuro przy ul. 25 Czerwca 60</span></div>
-      <div class="stat"><b>Wiele towarzystw</b><span>porównanie ofert w jednym miejscu</span></div>
-      <div class="stat"><b>Jeden doradca</b><span>od wyceny po pomoc przy szkodzie</span></div>
+      <div class="stat"><b><span class="js-years">26</span> lat doświadczenia</b><span>Wiedza i stabilność.</span></div>
+      <div class="stat"><b>Wiele towarzystw</b><span>Porównanie ofert w jednym miejscu.</span></div>
+      <div class="stat"><b>Indywidualna obsługa</b><span>Doradztwo dopasowane do potrzeb.</span></div>
+      <a class="stat stat-cta" href="#kontakt"><b>Bezpłatna wycena <i aria-hidden="true">→</i></b><span>Szybki pierwszy krok do wyboru polisy.</span></a>
     </div>
   </div>
 
@@ -403,6 +415,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
     </div>
   </section>
 </main>
+
+<a class="fab" href="tel:+48794909022" aria-label="Zadzwoń: +48 794 909 022"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg>Zadzwoń</a>
 
 <footer>
   <div class="wrap">
